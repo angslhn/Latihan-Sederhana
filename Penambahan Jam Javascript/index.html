@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Menambah dan Mengurang Waktu</title>
+  </head>
+  <body>
+    <section>
+      <div class="text">
+        <h1>Cari Waktu Dari Sekarang</h1>
+      </div>
+      <div class="waktu-sekarang">
+        <label for="waktu-sekarang">Waktu Sekarang</label>
+        <input type="text" name="waktu-sekarang" id="waktu-sekarang" readonly>
+      </div>
+      <div class="waktu-dari-sekarang">
+        <label for="waktu-dari-sekarang">Hasil Waktu Dari Sekarang</label>
+        <input type="text" name="waktu-dari-sekarang" id="waktu-dari-sekarang" readonly>
+      </div>
+      <div class="operasi-waktu">
+        <label for="nilai-operasi-waktu">Masukan Jumlah Hari</label>
+        <input type="number" name="nilai-operasi-waktu" id="nilai-operasi-waktu" required>
+      </div>
+      <div class="opsi-operasi-waktu">
+        <input type="checkbox" name="menambah-waktu" id="menambah-waktu">
+        <label for="menambah-waktu">Menambah Hari</label>
+        <input type="checkbox" name="mengurang-waktu" id="mengurang-waktu">
+        <label for="mengurang-waktu">Mengurang Hari</label>
+      </div>
+      <div class="button">
+        <button type="submit" id="button">Mulai</button>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
