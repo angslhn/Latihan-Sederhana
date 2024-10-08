@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TEXT TRANSFORM</title>
+  </head>
+  <body>
+    <section>
+      <div class="text-tranform-wrapper">
+        <div class="text-input">
+          <label for="text">Text</label>
+          <input
+            type="text"
+            name="text"
+            id="text"
+            placeholder="Input your text here"
+            required
+          />
+        </div>
+        <div class="text-input-result">
+          <label for="transform">Result</label>
+          <input type="text" name="transform" id="transform" readonly />
+        </div>
+        <div class="option-to-tranform">
+          <input type="checkbox" name="uppercase" id="uppercase" />
+          <label for="uppercase">Uppercase</label>
+          <input type="checkbox" name="lowercase" id="lowercase" />
+          <label for="lowercase">Lowercase</label>
+          <input type="checkbox" name="capitalize" id="capitalize" />
+          <label for="capitalize">Capitalize</label>
+        </div>
+        <div class="button-transform">
+          <button type="submit" name="button" id="button">START</button>
+        </div>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>KALKULATOR</title>
+</head>
+<body>
+    <section>
+        <div class="kalkulator">
+            <div class="text-kalkulator">
+                <h1>KALKULATOR</h1>
+            </div>
+            <div class="input-kalkulator">
+                <div class="angka-pertama">
+                    <label for="angka-pertama">ANGKA PERTAMA</label>
+                    <input type="number" name="angka-pertama" id="angka-pertama" required>
+                </div>
+                <div class="angka-kedua">
+                    <label for="angka-kedua">ANGKA KEDUA</label>
+                    <input type="number" name="angka-kedua" id="angka-kedua" required>
+                </div>
+            </div>
+            <div class="hasil-operasi">
+                <label for="hasil">HASIL</label>
+                <input type="text" name="hasi" id="hasil" readonly>
+            </div>
+            <div class="opsi-kalkulator">
+                <input type="checkbox" name="kali" id="kali">
+                <label for="kali">KALI</label>
+                <input type="checkbox" name="bagi" id="bagi">
+                <label for="bagi">BAGI</label>
+                <input type="checkbox" name="tambah" id="tambah">
+                <label for="tambah">TAMBAH</label>
+                <input type="checkbox" name="kurang" id="kurang">
+                <label for="kurang">KURANG</label>
+            </div>
+            <div class="tombol-kalkulator">
+                <button type="submit" id="button">MULAI</button>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
