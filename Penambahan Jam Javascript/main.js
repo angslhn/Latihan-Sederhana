@@ -30,28 +30,35 @@ operasiWaktuField.addEventListener("change", ()=> {
 
 
 const waktuSekarang = new Date();
-
-// Menampilkan waktu sekarang ke field
 waktuSekarangField.value = `${hari[waktuSekarang.getDay()]}, ${waktuSekarang.getDate()} - ${bulan[waktuSekarang.getMonth()]} - ${waktuSekarang.getFullYear()}`;
 
-function operasiMengurangWaktu(inputWaktu) {
-  return waktuSekarang.setDate(waktuSekarang.getDate() - inputWaktu);
+function operasiMenambahWaktu(inputWaktu) {
+  let waktuBaru = new Date(waktuSekarang);
+  waktuBaru.setDate(waktuBaru.getDate() + inputWaktu);
+  return waktuBaru.getTime();
 }
 
-function operasiMenambahWaktu(inputWaktu) {
-  return waktuSekarang.setDate(waktuSekarang.getDate() - inputWaktu);
+function operasiMengurangWaktu(inputWaktu) {
+  let waktuBaru = new Date(waktuSekarang);
+  waktuBaru.setDate(waktuBaru.getDate() - inputWaktu);
+  return waktuBaru.getTime();
 }
 
 function hasilOperasiWaktu(hasilWaktu) {
-  return console.log(hasilWaktu);
+  let waktuBaru = new Date(hasilWaktu);
+  waktuField.value = `${hari[waktuBaru.getDay()]}, ${waktuBaru.getDate()} - ${bulan[waktuBaru.getMonth()]} - ${waktuBaru.getFullYear()}`;
 }
 
 button.addEventListener("click", () => {
-  let inputWaktu = operasiWaktuField.value;
+  let inputWaktu = parseInt(operasiWaktuField.value);
 
   if (menambahWaktu.checked) {
     hasilOperasiWaktu(operasiMenambahWaktu(inputWaktu));
-  }
+  } else if (mengurangWaktu.checked) {
+    hasilOperasiWaktu(operasiMengurangWaktu(inputWaktu));
+  } else {
+    alert("Mohon pilih salah satu opsi!");
+  };
 });
 
 
