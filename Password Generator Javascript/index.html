@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <section class="flex-column">
+        <div class="password-all-group flex-column">
+            <h1>PASSWORD GENERATOR</h1>
+            <div class="get-password flex-row">
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" readonly>
+            </div>
+            <div class="password-length flex-row">
+                <label for="password-length">Length</label>
+                <input type="number" name="password-length" id="password-length" required>
+            </div>
+            <div class="option-create-password flex-row">
+                <div class="uppercase">
+                    <input type="checkbox" name="uppercase" id="uppercase">
+                    <label for="">Uppercase</label>
+                </div>
+                <div class="lowercase">
+                    <input type="checkbox" name="lowercase" id="lowercase">
+                    <label for="">Lowercase</label>
+                </div>
+                <div class="number">
+                    <input type="checkbox" name="number" id="number">
+                    <label for="">Number</label>
+                </div>
+                <div class="character">
+                    <input type="checkbox" name="character" id="character">
+                    <label for="">Character</label>
+                </div>
+            </div>
+            <div class="generate-password flex-row">
+                <button type="submit" id="generate">GENERATE</button>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
