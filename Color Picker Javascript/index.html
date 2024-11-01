@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Color Picker</title>
+</head>
+<body>
+    <div class="color-picker-wrapper flex-row">
+        <div class="color-picker flex-column">
+            <div class="color-picker-header flex-row">
+                <h1>COLOR PICKER</h1>
+            </div>
+            <div class="color-picker-show flex-row">
+                <span id="color"></span>
+            </div>
+            <div class="color-picker-hex flex-row">
+                <p id="hex-color">#000000</p>
+            </div>
+            <div class="color-picker-option flex-column">
+                <div class="color-picker-color flex-row">
+                    <input type="color" name="color" id="color-picker">
+                </div>
+                <div class="color-picker-range flex-column">
+                    <div class="red-range flex-row">
+                        <label for="red">R</label>
+                        <input type="range" name="red" min="0" max="255" value="0">
+                        <p id="red-show-color">0</p>
+                    </div>
+                    <div class="green-range flex-row">
+                        <label for="green">G</label>
+                        <input type="range" name="green" min="0" max="255" value="0">
+                        <p id="green-show-color">0</p>
+                    </div>
+                    <div class="blue-range flex-row">
+                        <label for="blue">B</label>
+                        <input type="range" name="blue" min="0" max="255" value="0">
+                        <p id="blue-show-color">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
