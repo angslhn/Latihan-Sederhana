@@ -1,4 +1,6 @@
-// Dynamic size container
+const dateNow = new Date();
+document.getElementById("yearNow").textContent = dateNow.getFullYear();
+
 window.addEventListener("resize", autoResize);
 
 function autoResize() {
@@ -9,28 +11,46 @@ function autoResize() {
 autoResize();
 
 async function translateText(text) {
-  const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|id`);
-  const data = await response.json();
-  return data.responseData.translatedText;
+  try {
+    const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|id`);
+    const data = await response.json();
+    return data.responseData.translatedText;
+  } 
+  catch (error) {
+    console.error("Failed to translate!", error);
+  }
 }
 
 async function getQuote() {
-  const response = await fetch("https://api.quotable.io/random");
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch("https://api.quotable.io/random");
+    const data = await response.json();
+    return data;
+  }
+  catch (error) {
+    console.error("Quote not available!", error);
+  }
+  
 }
 
 function showQuote(quote, author) {
   document.getElementById("quote").textContent = quote;
-  document.getElementById("author").textContent = `-${author}`;
+  document.getElementById("author").textContent = author;
 }
+
+const quoteWrapper = document.querySelector(".quote-content");
 
 async function quote() {
     let data = await getQuote();
-    let textQuote = await translateText(data.content);
-    let author = data.author;
 
-    showQuote(textQuote || data.content, author);
+    if (data) {
+      let textQuote = await translateText(data.content);
+
+      quoteWrapper.style.display = "flex";
+
+      showQuote(textQuote || data.content, data.author);
+    }
+
 };
 
 quote();

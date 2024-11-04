@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="component/quote.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Random Quotes</title>
 </head>
 <body>
     <div class="quote-wrapper auto-resize-height">
+        <h1>RANDOM QUOTES FOR TODAY!</h1>
         <div class="quote-content">
             <div class="text-quote">
-                <p id="quote"></p>
+                <q id="quote"></q>
             </div>
             <div class="author-quote">
                 <span id="author"></span>
             </div>
             <button type="button" onclick="quote()">New Quote</button>
         </div>
+        <p id="footer">&copy; <span id="yearNow"></span> Aang Solihin. All right reserved.</p>
     </div>
     <script src="main.js"></script>
 </body>
