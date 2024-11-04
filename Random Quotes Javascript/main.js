@@ -1,4 +1,5 @@
-window.addEventListener("resize", autoResize());
+// Dynamic size container
+window.addEventListener("resize", autoResize);
 
 function autoResize() {
   const sectionContent = document.querySelector(".auto-resize-height");
@@ -7,18 +8,29 @@ function autoResize() {
 
 autoResize();
 
-const url = "https://api.quotable.io/random";
-function getQuote() {
-  fetch(url)
-    .then((data) => data.json())
-    .then((data) => {
-      showQuote(data);
-    });
+async function translateText(text) {
+  const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|id`);
+  const data = await response.json();
+  return data.responseData.translatedText;
 }
 
-function showQuote(data) {
-    document.getElementById("quote").textContent = data.content;
-    document.getElementById("author").textContent = `-${data.author}`;
+async function getQuote() {
+  const response = await fetch("https://api.quotable.io/random");
+  const data = await response.json();
+  return data;
 }
 
-getQuote();
+function showQuote(quote, author) {
+  document.getElementById("quote").textContent = quote;
+  document.getElementById("author").textContent = `-${author}`;
+}
+
+async function quote() {
+    let data = await getQuote();
+    let textQuote = await translateText(data.content);
+    let author = data.author;
+
+    showQuote(textQuote || data.content, author);
+};
+
+quote();
